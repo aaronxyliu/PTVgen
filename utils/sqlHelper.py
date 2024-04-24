@@ -5,6 +5,9 @@ import os
 
 class ConnDatabase:
     def __init__(self, database_name: str):
+        if os.getenv("DB_HOST") == None:
+            print('Please add database information in the .env file.')
+            exit()
         self.connection = MySQLdb.connect(
             host= os.getenv("DB_HOST"),
             user=os.getenv("DB_USERNAME"),

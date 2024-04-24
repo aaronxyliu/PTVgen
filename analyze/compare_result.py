@@ -16,6 +16,9 @@ def CountLibs(tool_index):
     for entry in res:
         libs = json.loads(entry[tool_index])
         lib_cnt += len(libs)
+        for lib_entry in libs:
+            if lib_entry['libname'] == 'jquery':
+                print(lib_entry['version'])
     return lib_cnt
 
 def Compare(tool_index1, tool_index2):
@@ -47,10 +50,6 @@ def Compare(tool_index1, tool_index2):
                     elif len(set1) == 0:
                         category = min(category, 2)
                     elif set1.issubset(set2):
-                        print('=======')
-                        print(id)
-                        print(lib_entry1)
-                        print(lib_entry2)
                         category = min(category, 1)
                     elif set1.issuperset(set2):
                         category = min(category, 2)
@@ -68,6 +67,7 @@ def Compare(tool_index1, tool_index2):
     print(f'otherwise: {cnt[4]} ({Percent(cnt[4], cnt_all)})')
 
 if __name__ == '__main__':
-    Compare(2,3)
-    print(f'Tool1 libs: {CountLibs(2)}')
-    print(f'Tool2 libs: {CountLibs(3)}')
+    CountLibs(3)
+    # Compare(2,3)
+    # print(f'Tool1 libs: {CountLibs(2)}')
+    # print(f'Tool2 libs: {CountLibs(3)}')

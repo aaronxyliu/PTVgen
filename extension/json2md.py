@@ -23,6 +23,7 @@ with open(f'extension/libraries.json', 'r') as openfile:
 
 
 v_cnt = 0
+version_cnt = 0
 table = []
 for lib in libs:
     if_v = False
@@ -42,6 +43,7 @@ for lib in libs:
             "?version": if_v,
             "v_num": res[3]
         })
+        version_cnt += res[3]
     else:
         table.append({
             "libname": libname,
@@ -51,6 +53,8 @@ for lib in libs:
             "?version": if_v,
             "v_num": None
         })
+
+print(f'{len(libs)} libraries and {version_cnt} versions found.')
     
 table.sort(key=byStar, reverse=True)    
 

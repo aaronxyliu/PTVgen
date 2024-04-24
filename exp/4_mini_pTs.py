@@ -101,8 +101,8 @@ def minifyAll():
         if res:
             log.append([libname] + res)
 
-    df = pd.DataFrame(log, columns =['Library', 'Equivalence', 'Color Set', 'Supertree Set', 'Min Cover Set', 'Get mT', 'Get Sm', 'Total']) 
-    df.to_csv(f'log/mini_pTs2.csv', index=True)
+    df = pd.DataFrame(log, columns =['Library', 'Equivalence', 'Path Record', 'Supertree Set', 'Min Cover Set', 'Get mT', 'Get Sm', 'Total']) 
+    df.to_csv(f'log/mini_pTs.csv', index=True)
 
 if __name__ == '__main__':
     # Usage: > python3 mini_pTs.py <lib name>

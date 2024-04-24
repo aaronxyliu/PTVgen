@@ -3,7 +3,7 @@
 
 In total, there are 556 libraries collected by the tool. Among them, 403 are equipped with fine-grained version features.
 
-Data update time: 10.Mar 2024 19:43:07
+Data update time: 13.Mar 2024 16:37:25
 
 | Library | GitHub Star | Version Detection? | # Versions | Description |
 | ------- | ----------- | -------- | ---------- | ----------- |
