@@ -21,6 +21,24 @@ def CountLibs(tool_index):
                 print(lib_entry['version'])
     return lib_cnt
 
+def CalculatePopularity(tool_index):
+    Pop_dict = {}    # Popularity dictionary: libname-count
+    for entry in res:
+        libs = json.loads(entry[tool_index])
+        for lib in libs:
+            libname = lib['libname']
+            if libname in Pop_dict:
+                Pop_dict[libname] += 1
+            else:
+                Pop_dict[libname] = 1
+    Pop_dict = dict(sorted(Pop_dict.items(), key=lambda x:x[1], reverse=True))
+    print(f'Find {len(Pop_dict)} libraries.')
+
+    rank = 1
+    for name, count in Pop_dict.items():
+        print(f'No. {rank}  {count}  {name}')
+        rank += 1
+
 def Compare(tool_index1, tool_index2):
 
     cnt = [0] * 5
