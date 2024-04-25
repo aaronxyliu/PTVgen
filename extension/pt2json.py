@@ -45,7 +45,7 @@ def convert(libname, index_set):
 
 
 if __name__ == '__main__':
-    # Usage: > python3 extension/version_table.py <lib name> <start id> <end id>
+    # Usage: > python3 extension/pt2json.py -l <libname> start_id~end_id
 
     parser = argparse.ArgumentParser(
                     prog='pt2json.py',
