@@ -1,0 +1,12 @@
+16.Feb 2024 22:05:42 [WARNING] https://api.github.com/repos/facebook/react is an invalid url. Or github token is outdated.
+16.Feb 2024 22:05:42 [INFO] react-is finished. (1 / 4492)
+16.Feb 2024 22:05:45 [WARNING] https://api.github.com/repos/facebook/react is an invalid url. Or github token is outdated.
+16.Feb 2024 22:05:45 [INFO] react finished. (2 / 4492)
+16.Feb 2024 22:05:46 [WARNING] https://api.github.com/repos/facebook/react is an invalid url. Or github token is outdated.
+16.Feb 2024 22:05:46 [INFO] react-dom finished. (3 / 4492)
+16.Feb 2024 22:05:48 [WARNING] https://api.github.com/repos/vuejs/vue is an invalid url. Or github token is outdated.
+16.Feb 2024 22:05:48 [INFO] vue finished. (4 / 4492)
+16.Feb 2024 22:05:49 [WARNING] https://api.github.com/repos/twbs/bootstrap is an invalid url. Or github token is outdated.
+16.Feb 2024 22:05:50 [INFO] twitter-bootstrap finished. (5 / 4492)
+16.Feb 2024 22:05:51 [WARNING] https://api.github.com/repos/twbs/bootstrap is an invalid url. Or github token is outdated.
+16.Feb 2024 22:05:51 [INFO] bootstrap finished. (6 / 4492)
