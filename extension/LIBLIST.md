@@ -1,16 +1,19 @@
 
 ## Collected Library List
 
-In total, there are 556 libraries collected by the tool. Among them, 403 are equipped with fine-grained version features.
+In total, there are 583 libraries collected by the tool. Among them, 425 are equipped with fine-grained version features.
 
-Data update time: 13.Mar 2024 16:37:25
+Data update time: 18.Jun 2024 09:37:54
 
 | Library | GitHub Star | Version Detection? | # Versions | Description |
 | ------- | ----------- | -------- | ---------- | ----------- |
+| [react](https://facebook.github.io/react/) | 218.2 k | N | 775 | React is a JavaScript library for building user interfaces. |
+| [vue](http://vuejs.org) | 206.3 k | N | 487 | Simple, Fast & Composable MVVM for building interactive interfaces |
 | [bootstrap](http://getbootstrap.com/) | 166.7 k | Y | 27 | The most popular front-end framework for developing responsive, mobile first projects on the web. |
 | [d3](https://d3js.org) | 107.2 k | Y | 262 | A JavaScript visualization library for HTML and SVG. |
 | axios | 103.3 k | Y | 88 | Promise based HTTP client for the browser and node.js |
 | [three.js](http://threejs.org/) | 97.3 k | Y | 253 | JavaScript 3D library |
+| [angular](https://github.com/angular/angular#readme) | 93.4 k | N | 404 | Angular - the core framework |
 | [font-awesome](https://fontawesome.com/) | 72.7 k | Y | 99 | The iconic SVG, font, and CSS toolkit |
 | [reveal.js](https://revealjs.com/) | 66.4 k | Y | 54 | The HTML Presentation Framework |
 | [Chart.js](http://www.chartjs.org) | 62.9 k | Y | 110 | Simple HTML5 charts using the canvas element. |
@@ -21,6 +24,7 @@ Data update time: 13.Mar 2024 16:37:25
 | [jquery](http://jquery.com/) | 58.4 k | Y | 82 | JavaScript library for DOM operations |
 | [echarts](https://echarts.apache.org) | 57.8 k | Y | 113 | A powerful, interactive charting and data visualization library for browser |
 | [element-ui](http://element.eleme.io) | 53.9 k | Y | 164 | A Component Library for Vue.js. |
+| [semantic-ui](http://semantic-ui.com/) | 50.9 k | Y | 160 | Semantic empowers designers and developers by creating a shared vocabulary for UI. |
 | [animejs](http://anime-js.com) | 48.2 k | Y | 14 | Polyvalent Javascript animation engine |
 | prettier | 47.7 k | Y | 62 | Prettier is an opinionated code formatter |
 | [moment.js](http://momentjs.com/) | 47.7 k | Y | 78 | Parse, validate, manipulate, and display dates |
@@ -36,6 +40,7 @@ Data update time: 13.Mar 2024 16:37:25
 | [quill](http://quilljs.com) | 38.2 k | Y | 86 | Cross browser rich text editor |
 | impress.js | 37.4 k | N |  | It's a presentation framework based on the power of CSS3 transforms and transitions in modern browsers and inspired by the idea behind prezi.com |
 | [phaser](https://phaser.io/) | 35.9 k | Y | 154 | A fast, free and fun HTML5 Game Framework for Desktop and Mobile web browsers. |
+| [preact](https://preactjs.com) | 35.7 k | N | 228 | Fast 3kb React alternative with the same ES6 API. Components & Virtual DOM. |
 | [ant-design-pro](https://pro.ant.design) | 35.5 k | N | 45 | An enterprise-class UI design language and React-based implementation |
 | [fullPage.js](http://alvarotrigo.com/fullPage/) | 34.9 k | Y | 95 | Create beautiful fullscreen snap scrolling websites |
 | xls | 34.2 k | Y | 28 | Excel 5.0/95 and 97-2004 spreadsheet (BIFF5 XLS / BIFF8 XLS / XML 2003) parser |
@@ -49,6 +54,7 @@ Data update time: 13.Mar 2024 16:37:25
 | material-design-lite | 32.3 k | Y | 18 | Material Design Components in CSS, JS and HTML |
 | marked | 31.3 k | Y | 165 | A markdown parser built for speed |
 | [ccxt](https://ccxt.com) | 30.3 k | Y | 151 | A JavaScript / TypeScript / Python / C# / PHP cryptocurrency trading library with support for 130+ exchanges |
+| [foundation](http://foundation.zurb.com) | 29.6 k | Y | 93 | The most advanced responsive front-end framework in the world. |
 | [html2canvas](http://html2canvas.hertzen.com/) | 29.4 k | N | 34 | Screenshots with JavaScript |
 | [bodymovin](https://airbnb.io/lottie/) | 29.4 k | Y | 171 | After Effects plugin for exporting animations to SVG + JavaScript or canvas + JavaScript |
 | [lottie-web](https://github.com/airbnb/lottie-web#readme) | 29.4 k | Y | 41 | After Effects plugin for exporting animations to SVG + JavaScript or canvas + JavaScript |
@@ -93,6 +99,8 @@ Data update time: 13.Mar 2024 16:37:25
 | [fingerprintjs2](https://github.com/fingerprintjs/fingerprintjs) | 20.5 k | Y | 90 | The library is renamed to @fingerprintjs/fingerprintjs. Check the link below to get updates. |
 | bluebird | 20.4 k | Y | 105 | Full featured Promises/A+ implementation with exceptionally good performance |
 | [driver.js](https://kamranahmed.info/driver) | 20.2 k | Y | 66 | A light-weight, no-dependency, vanilla JavaScript library to drive the user's focus across the page |
+| [dash-core-components](https://github.com/plotly/dash) | 20.0 k | Y | 12 | Core component suite for Dash |
+| [dash-html-components](https://github.com/plotly/dash) | 20.0 k | Y | 12 | Vanilla HTML components for Dash |
 | [popmotion](http://popmotion.io) | 19.7 k | Y | 116 | The JavaScript motion engine. Handles animation, physics, and input tracking. |
 | [grapesjs](https://grapesjs.com) | 19.5 k | Y | 184 | Free and Open Source Web Builder Framework |
 | [Mock.js](http://mockjs.com/) | 19.3 k | Y | 17 | Mock.js is a simulation data generator to help the front-end to develop and prototype separate from the back-end progress and reduce some monotony particularly while writing automated tests. |
@@ -115,12 +123,14 @@ Data update time: 13.Mar 2024 16:37:25
 | [gun](https://github.com/amark/gun#readme) | 17.6 k | Y | 18 | A realtime, decentralized, offline-first, graph data synchronization engine. |
 | [handlebars.js](http://www.handlebarsjs.com) | 17.6 k | Y | 80 | Handlebars provides the power necessary to let you build semantic templates effectively with no frustration |
 | [fullcalendar](http://fullcalendar.io/) | 17.6 k | Y | 109 | Full-sized drag & drop event calendar |
+| [fullcalendar](http://fullcalendar.io/) | 17.6 k | Y | 109 | Full-sized drag & drop event calendar |
 | [KaTeX](https://khan.github.io/KaTeX/) | 17.4 k | Y | 74 | Fast math typesetting for the web. |
 | [flux](http://facebook.github.io/flux/) | 17.4 k | N | 15 | An application architecture based on a unidirectional data flow |
 | [draggable](https://shopify.github.io/draggable/) | 17.3 k | N | 27 | The JavaScript Drag & Drop library your grandparents warned you about. |
 | [velocity](http://velocityjs.org) | 17.3 k | Y | 72 | Accelerated JavaScript animation. |
 | lazysizes | 17.2 k | Y | 97 | High performance (jankfree) lazy loader for images (including responsive images), iframes and scripts (widgets). |
 | [fuse.js](http://kiro.me/projects/fuse.html) | 17.1 k | Y | 77 | Lightweight fuzzy-search |
+| [emotion-core](https://github.com/emotion-js/emotion/tree/master/packages/core) | 17.0 k | Y | 10 | Simple styling in React. |
 | [less.js](http://lesscss.org/) | 17.0 k | Y | 113 | Leaner CSS |
 | eruda | 16.8 k | Y | 124 | Console for Mobile Browsers |
 | [sweetalert2](https://sweetalert2.github.io/) | 16.6 k | Y | 49 | A beautiful, responsive, customizable and accessible (WAI-ARIA) replacement for JavaScript's popup boxes, supported fork of sweetalert |
@@ -130,6 +140,7 @@ Data update time: 13.Mar 2024 16:37:25
 | vConsole | 16.3 k | Y | 63 | A lightweight, extendable front-end developer tool for mobile web page. |
 | [pouchdb](http://pouchdb.com/) | 16.2 k | Y | 75 | PouchDB is a pocket-sized database. |
 | [masonry](http://masonry.desandro.com/) | 16.2 k | Y | 38 | Cascading grid layout library |
+| mustache.js | 16.2 k | Y | 47 | Logic-less {{mustache}} templates with JavaScript |
 | mustache.js | 16.2 k | Y | 47 | Logic-less {{mustache}} templates with JavaScript |
 | aframe | 16.0 k | Y | 26 | Building blocks for the VR Web |
 | [inferno-devtools](https://infernojs.org/) | 16.0 k | Y | 191 | Provides support for React's Dev Tools for Inferno |
@@ -182,8 +193,8 @@ Data update time: 13.Mar 2024 16:37:25
 | [toastr.js](http://www.toastrjs.com) | 11.8 k | Y | 11 | ToastrJS is a JavaScript library for Gnome / Growl type non-blocking notifications. jQuery is required. The goal is to create a simple core library that can be customized and extended. |
 | onnxruntime-web | 11.8 k | Y | 93 | A Javascript library for running ONNX models on browsers |
 | shepherd | 11.7 k | Y | 77 | Guide your users through a tour of your app. |
-| [highmaps](http://highcharts.com/) | 11.7 k | N | 42 | Highmaps is Highcharts for geo maps. Mainly choropleth maps where the color intensity relates to some value of a geographic area, but Highmaps also supports different features like lines (roads, rivers etc.) and points (cities, points of interest) and more. Highmaps comes in two flavors, either as a standalone JavaScript file, or as a plugin for Highcharts. Highmaps is NOT free for commercial use.  See the license and pricing here: http://shop.highsoft.com/highmaps.html |
 | [highcharts](https://highcharts.com/) | 11.7 k | Y | 110 | Highcharts is a charting library written in pure JavaScript, offering an easy way of adding interactive charts to your web site or web application. Highcharts currently supports line, spline, area, areaspline, column, bar, pie and scatter chart types. Highcharts is NOT free for commercial use.  See the license here: http://highcharts.com/license |
+| [highmaps](http://highcharts.com/) | 11.7 k | N | 42 | Highmaps is Highcharts for geo maps. Mainly choropleth maps where the color intensity relates to some value of a geographic area, but Highmaps also supports different features like lines (roads, rivers etc.) and points (cities, points of interest) and more. Highmaps comes in two flavors, either as a standalone JavaScript file, or as a plugin for Highcharts. Highmaps is NOT free for commercial use.  See the license and pricing here: http://shop.highsoft.com/highmaps.html |
 | [card](http://jessepollak.github.io/card) | 11.6 k | Y | 40 | Card lets you add an interactive, CSS3 credit card animation to your credit card form to help your users through the process. |
 | [cesium](http://cesium.com/cesiumjs/) | 11.5 k | Y | 61 | CesiumJS is a JavaScript library for creating 3D globes and 2D maps in a web browser without a plugin. |
 | [mousetrap](http://craig.is/killing/mice) | 11.5 k | Y | 29 | Simple library for handling keyboard shortcuts |
@@ -214,6 +225,7 @@ Data update time: 13.Mar 2024 16:37:25
 | falcor | 10.4 k | Y | 49 | A JavaScript library for efficient data fetching. |
 | trianglify | 10.0 k | N | 31 | Trianglify is a javascript library for generating colorful triangle meshes that can be used as SVG images and CSS backgrounds. |
 | acorn | 10.0 k | Y | 132 | ECMAScript parser |
+| [acorn-loose](https://github.com/acornjs/acorn) | 10.0 k | Y | 12 | Error-tolerant ECMAScript parser |
 | [acorn-walk](https://github.com/acornjs/acorn) | 10.0 k | Y | 18 | ECMAScript (ESTree) AST walker |
 | [picturefill](http://scottjehl.github.com/picturefill/) | 9.9 k | Y | 19 | A responsive image polyfill. |
 | dom-to-image | 9.9 k | Y | 35 | Generates an image from a DOM node using HTML5 canvas and SVG |
@@ -279,6 +291,7 @@ Data update time: 13.Mar 2024 16:37:25
 | jsdiff | 7.4 k | Y | 40 | A javascript text diff implementation. |
 | [jquery-infinitescroll](https://infinite-scroll.com/) | 7.4 k | Y | 17 | Infinite Scroll is a JavaScript plugin that automatically adds the next page, saving users from a full page load. |
 | es6-promise | 7.3 k | N | 30 | A lightweight library that provides tools for organizing asynchronous code |
+| [fancybox](https://fancyapps.com/fancybox/3/) | 7.3 k | Y | 34 | Touch enabled, responsive and fully customizable jQuery lightbox script |
 | ethers | 7.3 k | N | 95 | Umbrella package for most common Ethers libraries. |
 | [odometer.js](http://github.hubspot.com/odometer/docs/welcome/) | 7.3 k | N | 16 | Transition numbers with ease |
 | [datatables](http://datatables.net) | 7.3 k | Y | 29 | DataTables enhances HTML tables with the ability to sort, filter and page the data in the table very easily. It provides a comprehensive API and set of configuration options, allowing you to consume data from virtually any data source. |
@@ -327,6 +340,7 @@ Data update time: 13.Mar 2024 16:37:25
 | [brython](https://www.brython.info) | 6.2 k | N | 44 | Python 3 in the browser |
 | [json5](http://json5.org) | 6.2 k | N | 28 | JSON for the ES5 era. |
 | [dinero.js](https://sarahdayan.github.io/dinero.js) | 6.1 k | N | 44 | An immutable library to create, calculate and format monetary values. |
+| [bizcharts](https://bizcharts.net) | 6.1 k | Y | 88 | bizcharts |
 | js-yaml | 6.1 k | Y | 46 | YAML 1.2 parser and serializer |
 | [heatmap.js](https://www.patrick-wied.at/static/heatmapjs/) | 6.1 k | N | 4 | Dynamic JavaScript Heatmaps for the Web |
 | [epub.js](https://github.com/futurepress/epub.js#readme) | 6.1 k | N | 5 | Render ePub documents in the browser, across many devices |
@@ -349,6 +363,7 @@ Data update time: 13.Mar 2024 16:37:25
 | redux-logger | 5.7 k | Y | 10 | Logger for Redux |
 | [simplebar](https://grsmto.github.io/simplebar/) | 5.7 k | N | 105 | Custom scrollbars with native scroll, done simple, lightweight, easy to use and cross-browser. |
 | [billboard.js](https://naver.github.io/billboard.js/) | 5.7 k | Y | 168 | Re-usable easy interface JavaScript chart library, based on D3 v4+ |
+| gridstack.js | 5.7 k | Y | 69 | gridstack.js is a jQuery plugin for widget layout |
 | remarkable | 5.6 k | Y | 22 | Markdown parser, done right. 100% Commonmark support, extensions, syntax plugins, high speed - all in one. |
 | [melonjs](http://www.melonjs.org/) | 5.6 k | Y | 13 | MelonJS Game Engine |
 | [noUiSlider](http://refreshless.com/nouislider/) | 5.6 k | Y | 105 | A lightweight, highly customizable range slider without bloat. Touch support on all modern devices and responsive design ready! |
@@ -357,6 +372,7 @@ Data update time: 13.Mar 2024 16:37:25
 | smooth-scroll | 5.5 k | Y | 71 | Animate scrolling to anchor links |
 | [benchmark](http://benchmarkjs.com/) | 5.5 k | Y | 24 | A benchmarking library that supports high-resolution timers & returns statistically significant results. |
 | ramjet.js | 5.5 k | N | 9 | Transform DOM elements into each another with smooth transitions |
+| [ng-grid](http://angular-ui.github.io/ng-grid/) | 5.4 k | Y | 5 | A data grid for Angular |
 | [vue-chartjs](http://vue-chartjs.org) | 5.4 k | Y | 93 | vue.js wrapper for chart.js |
 | bowser | 5.4 k | Y | 82 | A small, fast and rich-API browser/platform/engine detector for both browser and node. |
 | reflux | 5.4 k | Y | 45 | A simple library for uni-directional dataflow application architecture inspired by ReactJS Flux |
@@ -370,6 +386,7 @@ Data update time: 13.Mar 2024 16:37:25
 | snabbt.js | 5.2 k | Y | 16 | Fast animations with javascript and CSS-transforms |
 | [jsbarcode](http://lindell.me/JsBarcode) | 5.2 k | N | 32 | JsBarcode is a simple and powerfull way to create different types of 1d barcodes. |
 | gl-matrix | 5.2 k | N | 26 | Javascript Matrix and Vector library for High Performance WebGL apps |
+| [froala-editor](https://www.froala.com/wysiwyg-editor) | 5.2 k | Y | 130 | A beautiful jQuery WYSIWYG HTML rich text editor. High performance and modern design make it easy to use for developers and loved by users. |
 | [froala-editor](https://www.froala.com/wysiwyg-editor) | 5.2 k | Y | 130 | A beautiful jQuery WYSIWYG HTML rich text editor. High performance and modern design make it easy to use for developers and loved by users. |
 | [hogan.js](http://twitter.github.com/hogan.js/) | 5.1 k | N | 4 | A mustache compiler. |
 | vanta | 5.1 k | Y | 14 | 3D animated backgrounds for your website |
@@ -402,6 +419,7 @@ Data update time: 13.Mar 2024 16:37:25
 | [pubsub-js](https://github.com/mroderick/PubSubJS/) | 4.7 k | Y | 40 | Dependency free publish/subscribe library |
 | exif-js | 4.7 k | N | 8 | JavaScript library for reading EXIF image metadata |
 | bespoke.js | 4.7 k | N | 7 | DIY Presentation Micro-Framework |
+| autocomplete.js | 4.7 k | Y | 65 | Fast and fully-featured autocomplete library |
 | [gif.js](https://jnordberg.github.io/gif.js/) | 4.7 k | N | 7 | JavaScript GIF encoding library |
 | [squire-rte](https://neilj.github.io/Squire/) | 4.6 k | N | 52 | Squire is an HTML5 rich text editor, which provides powerful cross-browser normalisation, whilst being supremely lightweight and flexible. |
 | [imask](https://unmanner.github.io/imaskjs/) | 4.6 k | Y | 88 | vanilla javascript input mask |
@@ -411,6 +429,7 @@ Data update time: 13.Mar 2024 16:37:25
 | jsondiffpatch | 4.6 k | Y | 48 | Diff & Patch for Javascript objects |
 | topojson | 4.6 k | Y | 87 | An extension to GeoJSON that encodes topology. |
 | [cannon.js](http://schteppe.github.com/cannon.js) | 4.5 k | Y | 6 | A lightweight 3D physics engine written in JavaScript. |
+| [elfinder](http://elfinder.org/) | 4.5 k | Y | 79 | Open-source file manager for web, written in JavaScript using jQuery and jQuery UI. |
 | [sugar](http://sugarjs.com/) | 4.5 k | Y | 38 | A Javascript library for working with native objects. |
 | [sir-trevor-js](https://madebymany.github.io/sir-trevor-js/) | 4.5 k | Y | 50 | Rich content editing entirely re-imagined for the web |
 | [mammoth](https://mike.zwobble.org/projects/mammoth/) | 4.5 k | Y | 82 | Convert Word documents from docx to simple HTML and Markdown |
@@ -440,6 +459,7 @@ Data update time: 13.Mar 2024 16:37:25
 | [packery](http://packery.metafizzy.co/) | 4.1 k | Y | 13 | bin-packing layout library |
 | [sketch.js](https://github.com/soulwire/sketch.js/) | 4.1 k | Y | 3 | Cross-Platform JavaScript Creative Coding Framework |
 | vizceral | 4.0 k | Y | 74 | Intuitive animated traffic graph using webgl. If a graph of nodes and edges with data about traffic volume is provided, it will render a traffic graph animating the connection volume between nodes. |
+| [messenger](http://github.hubspot.com/messenger) | 4.0 k | Y | 13 | Client-side growl-like notifications with actions and auto-retry. |
 | [react-flip-move](https://joshwcomeau.github.io/react-flip-move/examples) | 4.0 k | N | 90 | Effortless animation between DOM changes (eg. list reordering) using the FLIP technique. |
 | [qunit](https://qunitjs.com/) | 4.0 k | Y | 71 | An easy-to-use JavaScript Unit Testing framework. |
 | [body-scroll-lock](https://github.com/willmcpo/body-scroll-lock#readme) | 4.0 k | N | 11 | Enables body scroll locking (for iOS Mobile and Tablet, Android, desktop Safari/Chrome/Firefox) without breaking scrolling of a target element (eg. modal/lightbox/flyouts/nav-menus) |
@@ -458,6 +478,8 @@ Data update time: 13.Mar 2024 16:37:25
 | [draggabilly](http://draggabilly.desandro.com/) | 3.8 k | Y | 32 | make that shiz draggable |
 | [prefixfree](http://leaverou.github.com/prefixfree/) | 3.8 k | N | 2 | A script that lets you use only unprefixed CSS properties everywhere. It works behind the scenes, adding the current browser’s prefix to any CSS code, only when it’s needed. |
 | imager.js | 3.8 k | N | 9 | Imager.js is an alternative solution to the issue of how to handle responsive image loading, created by developers at BBC News. |
+| [jquery-timeago](http://timeago.yarp.com/) | 3.8 k | Y | 49 | jQuery plugin that makes it easy to support automatically updating fuzzy timestamps (e.g. "4 minutes ago" or "about 1 day ago"). |
+| [leaflet.markercluster](http://leafletjs.com) | 3.8 k | Y | 22 | Provides Beautiful Animated Marker Clustering functionality for Leaflet |
 | [lz-string](http://pieroxy.net/blog/pages/lz-string/index.html) | 3.8 k | N | 14 | LZ-based compression algorithm |
 | [chrono-node](https://wanasit.github.io/pages/chrono/) | 3.8 k | N | 106 | A natural language date parser in Javascript |
 | [moment-timezone](http://momentjs.com/timezone) | 3.8 k | Y | 61 | Parse and display moments in any timezone. |
@@ -484,8 +506,8 @@ Data update time: 13.Mar 2024 16:37:25
 | [voca](https://vocajs.com) | 3.6 k | Y | 11 | The ultimate JavaScript string library |
 | outdated-browser | 3.5 k | N | 7 | A time saving tool for developers. It detects outdated browsers and advises users to upgrade to a new version. |
 | [camanjs](http://camanjs.com/) | 3.5 k | Y | 23 | Javascript (Ca)nvas (Man)ipulation for NodeJS and the browser |
-| [sanitize-html](https://github.com/apostrophecms/sanitize-html#readme) | 3.5 k | N | 43 | Clean up user-submitted HTML, preserving whitelisted elements and whitelisted attributes on a per-element basis |
 | [prototype](http://prototypejs.org/) | 3.5 k | Y | 12 | Prototype is a JavaScript Framework that aims to ease development of dynamic web applications. |
+| [sanitize-html](https://github.com/apostrophecms/sanitize-html#readme) | 3.5 k | N | 43 | Clean up user-submitted HTML, preserving whitelisted elements and whitelisted attributes on a per-element basis |
 | incremental-dom | 3.5 k | Y | 9 | An in-place virtual DOM library |
 | [tweenjs](https://createjs.com/tweenjs/) | 3.5 k | Y | 12 | TweenJS is a simple tweening library for use in Javascript. It was developed to integrate well with the EaselJS library, but is not dependent on or specific to it (though it uses the same Ticker and Event classes by default). It supports tweening of both numeric object properties & CSS style properties. |
 | [canvg](https://canvg.github.io/canvg/examples/index.htm) | 3.5 k | N | 21 | Javascript SVG parser and renderer on Canvas |
@@ -559,7 +581,12 @@ Data update time: 13.Mar 2024 16:37:25
 | [qooxdoo](http://qooxdoo.org) | 763 | Y | 15 | Universal JavaScript Framework |
 | bytemd | 219 | N | 19 | Hackable Markdown Editor and Viewer |
 | [chartist](https://gionkunz.github.io/chartist-js) | 58 | Y | 54 | Simple, responsive charts |
-| google_maps |  | Y |  |  |
-| [extjs](http://www.sencha.com/products/extjs/) |  | Y | 5 | Ext JS is the developer's choice for building powerful desktop web applications using JavaScript and web standards. |
+| angularjs |  | Y |  |  |
 | boomerangjs |  | Y |  |  |
+| emberjs |  | Y |  |  |
 | [extjs](http://www.sencha.com/products/extjs/) |  | Y | 5 | Ext JS is the developer's choice for building powerful desktop web applications using JavaScript and web standards. |
+| [extjs](http://www.sencha.com/products/extjs/) |  | Y | 5 | Ext JS is the developer's choice for building powerful desktop web applications using JavaScript and web standards. |
+| google_maps |  | Y |  |  |
+| next |  | Y |  |  |
+| svelte |  | N |  |  |
+| vue2 |  | Y |  |  |
