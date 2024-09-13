@@ -2,6 +2,7 @@
 bin
 pyvenv.cfg
 **/.env
+.DS_Store
 **/.DS_Store
 **/test.py
 **/test.json
