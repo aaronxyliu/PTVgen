@@ -157,6 +157,160 @@ class LabeledTree:
                     return False
         return True
 
+    def __sub__(self, treeB):
+        """
+        Generate the difference of current tree from treeB. (self - treeB)
+        NOT FINISHED !!
+
+        Parameters:
+            treeB - another tree
+
+        Returns:
+            newtree - the subtraction result
+        """
+        # Return self - other
+        if treeB == None:
+            return self
+        assert(isinstance(treeB, LabeledTree))
+        if self.root == None or treeB.root == None:
+            return self
+        
+        newtree = LabeledTree(Vertex(self.root.name))
+        q1 = [self.root]
+        q2 = [treeB.root]
+        q3 = [newtree.root]
+        while len(q2):
+            v1 = q1.pop(0)
+            v2 = q2.pop(0)
+            v3 = q3.pop(0)
+            for c2 in v2.children: 
+                find_same_child = False
+                for c1 in v1.children:
+                    if c1 == c2:
+                        find_same_child = True
+                        new_v = Vertex(c1.name)
+                        v3.addc(new_v)
+                        q1.append(c1)
+                        q2.append(c2)
+                        q3.append(new_v)
+                        newtree_size += 1
+                        break
+        return newtree
+        
+        
+        diff_tree = {'name': 'window', 'dict': {}, 'children': []}
+        q1 = []
+        q2 = []
+        q3 = []
+        q1.append(tree1)
+        q2.append(tree2)
+        q3.append([])
+
+        while len(q2): 
+            node1 = q1.pop(0)
+            node2 = q2.pop(0)
+            path = q3.pop(0)
+
+            for child_node2 in node2['children']:
+                find_same_child = False
+
+                for child_node1 in node1['children']:
+                    if child_node1['name'] == child_node2['name']:
+                        find_same_child = True
+                        q1.append(child_node1)
+                        q2.append(child_node2)
+                        q3.append(path[:])
+                        q3[len(q3) - 1].append(child_node1['name'])
+                        break
+
+                if not find_same_child:
+                    child_node2['path'] = path[:]
+                    diff_tree['children'].append(child_node2)
+        
+        return diff_tree
+    
+    def diffFunc(self, treeB: object) -> int:
+        """
+        Calculate the number of functions in self tree but not in tree B.
+
+        Parameters:
+            treeB - another tree
+
+        Returns:
+            diffnum - number of different functions
+        """
+        assert(isinstance(treeB, LabeledTree))
+        if self.root == None:
+            return 0
+        if self.root != treeB.root:
+            return self.__calFunc__(self.root, None)
+        diffnum = 0
+        q1 = [self.root]
+        q2 = [treeB.root]
+        while len(q1):
+            v1 = q1.pop(0)
+            v2 = q2.pop(0)
+            for c1 in v1.children: 
+                find_same_child = False
+                for c2 in v2.children:
+                    if c1 == c2:
+                        q1.append(c1)
+                        q2.append(c2)
+                        find_same_child = True
+                if not find_same_child:
+                    diffnum += self.__calFunc__(c1, None)
+        return diffnum
+    
+    def func_num(self, _logger) -> int:
+        # Returen the function vertex number
+        return self.__calFunc__(self.root, _logger)
+
+    def __calFunc__(self, root: object, _logger: object) -> int:
+        """
+        Calculate the number of functions int the tree starting from root.
+
+        Parameters:
+            root - root of the tree
+            logger - (optional) used to log out function paths
+
+        Returns:
+            funcnum - number of functions
+        """
+        assert(isinstance(root, Vertex))
+
+        vertex_addr_dict = []
+
+        funcnum = 0
+        q = [root]
+        q2 = [[root.name]]
+        while len(q):
+            v = q.pop(0)
+
+            # Prevent vertices pointing to the same address
+            repeat_vertex = False
+            for old_v in vertex_addr_dict:
+                if v == old_v:
+                    repeat_vertex = True
+                    break
+            if repeat_vertex:
+                continue
+            vertex_addr_dict.append(v)
+
+            path = q2.pop(0)
+            if 't' in v.label and v.label["t"] == 6:
+                funcnum += 1
+                if _logger:
+                    _logger.info(path)
+
+            # Sort the children based on their names
+            sorted_children = sorted(v.children, key=lambda x:x.name, reverse=False)
+            for c in sorted_children:
+                q.append(c)
+                q2.append(path + [c.name])
+        return funcnum
+
+
+
     def __get_metas__(self, par, d, p):
         """
         Generate meta informations for the tree, including tree size, full paths, 
