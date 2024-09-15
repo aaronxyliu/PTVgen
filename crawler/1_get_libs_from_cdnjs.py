@@ -1,4 +1,5 @@
 # Crawl all libraries and their Github star number from Cdnjs
+# Remember to set the CRAWER_LIMIT and the Github token
 
 from urllib.request import Request, urlopen
 import json
@@ -13,8 +14,10 @@ conn = ultraimport('__dir__/../utils/sqlHelper.py').ConnDatabase('Libraries')
 # Github API rate limit: 5000/hr
 # Token generation: https://github.com/settings/tokens
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
+logger.info(f'The Github token is: {GITHUB_TOKEN}')
+
 OUTPUT_TABLE = 'libs_cdnjs'
-CRAWL_LIMIT = 10
+CRAWL_LIMIT = 5000
 CRAWL_INTERVAL = 0.5    # sleep seconds between iterations
 
 def get_star(lib_info):

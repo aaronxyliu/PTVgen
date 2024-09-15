@@ -8482,6 +8482,18 @@
         ]
     },
     {
+        "libname": "vue",
+        "url": "https://cn.vuejs.org/",
+        "feature1": [
+            [
+                "__VUE__"
+            ],
+            [
+                "__VUE_INSTANCE_SETTERS__"
+            ]
+        ]
+    },
+    {
         "libname": "vue-chartjs",
         "url": "https://cdnjs.com/libraries/vue-chartjs",
         "function": "test_vuechartjs",
