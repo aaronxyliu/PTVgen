@@ -65,3 +65,5 @@ for lib in libs:
             break
 
         page_no += 1
+
+conn.close()
