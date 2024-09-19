@@ -57,11 +57,10 @@ def my_cmp(x, y):
 
 def freq_pTs(libname, mts):
     INPUT_TABLE = f'{libname}_version'
-
     G = tree.Gamma()
 
     try:
-        res = conn.fetchall(f"SELECT `pTree`, `version`, `size` FROM `{INPUT_TABLE}`;")
+        res = conn.fetchall(f'''SELECT `pTree`, `version`, `size` FROM `{INPUT_TABLE}`;''')
     except:
         logger.warning(f'Library {libname} doesn\'t have pTrees information stored in the database. Skipped.')
         return None

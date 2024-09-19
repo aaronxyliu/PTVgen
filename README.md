@@ -57,6 +57,7 @@ The parameter content "jquery/3.7.1/jquery.min.js" will evaluate to the url "htt
 5. Run `/exp/3_gen_pTs.py` to aumatically generate pTree for all libraries. pTrees will be uploaded to the local database. Log information will be stored to `/log/gen_pTs` folder.
 6. Run `/exp/4_mini_PTs.py` to minify the pTrees.
 7. Run `/exp/5_freq_PTs.py` to find the maximum frequrent subtree for each library, and store all the data in a new table named `min_freq_subtree`. In the meantime, this program will also generate the file `/extension/libraries.json`, which is required for [our Chrome extension component](https://github.com/aaronxyliu/PTV).
+8. If one library needs minimized pTree to identify the version, run `/extension/pt2json.py` to convert the pTree information from dataset into a json file. Then put this file into the `/data/versions/` folder of the PTV project. Don't forget to modify the `libraries.json` file to link this version file to the library.
 
 
 #### File Structure

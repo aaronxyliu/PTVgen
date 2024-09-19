@@ -9,3 +9,4 @@ pyvenv.cfg
 log/**
 temp/**
 lib
+include
