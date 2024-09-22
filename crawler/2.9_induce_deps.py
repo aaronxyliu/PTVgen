@@ -40,6 +40,7 @@ def updateOne(libname, file_index, file_list):
     error_div = driver.find_element(By.ID, 'js-errors')
     if not error_div.text:
         file_list[file_index]['success'] = True
+        logger.custom('NO DEP NEEDED', '')
         return True
     
     
@@ -56,7 +57,7 @@ def updateOne(libname, file_index, file_list):
             return True     # Continue iterating subsequent versions
         error_div = driver.find_element(By.ID, 'js-errors')
         if not error_div.text:
-            logger.info(f'  [Dep Found] {libname}: {version} - {dep}')
+            logger.custom('DEP FOUND', f'{libname}: {version} - {dep}')
             file_list[file_index]['out_deps'].append(f'{CDN_PREFIX}{dep}')  # Add dep to the file
             file_list[file_index]['success'] = True
             return True
@@ -85,9 +86,9 @@ def updateLibrary(libname, start_id=0):
             continue
 
         res = updateOne(libname, file_index, file_list)
-        if not res:
-            # Don't continue if dep induce failed
-            break
+        # if not res:
+        #     # Don't continue if dep induce failed
+        #     break
     
     with open(f'static/libs_data/{libname}.json', "w") as outfile:
         outfile.write(json.dumps(file_list))
@@ -119,7 +120,7 @@ if __name__ == '__main__':
     if len(sys.argv) > 1:
         updateLibrary(sys.argv[1])
     else:
-        updateAll('tufte-css')
+        updateAll()
     driver.close()
     logger.close()
 

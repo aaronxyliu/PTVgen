@@ -3,6 +3,7 @@
 from urllib.request import urlopen
 import json
 import ultraimport
+import sys
 logger = ultraimport('__dir__/../utils/logger.py').getLogger()
 conn = ultraimport('__dir__/../utils/sqlHelper.py').ConnDatabase('Libraries')
 
@@ -12,9 +13,18 @@ LIBRARY_TABLE = 'libs_cdnjs'
 
 EXTRA_BONUS = 200  # the credit bonus for the file name which is similar to the library name
 
+# File name pattern list (priority from high to low).
+# If this is empty, then the suitable filename of each version will be induced automatically by their frequencies.
+PATTERN_LIST = ['froala_editor.pkgd.min.js', 'froala_editor.min.js']
 
 def select_file_for_each_version(files, patten_dict):
     # Return a single file path for each version
+    for pattern in PATTERN_LIST:
+        for filepath in files:
+            filename = filepath[filepath.rfind('/') + 1 :]
+            if filename == pattern:
+                return filepath
+                
     for pattern in patten_dict:
         for filepath in files:
             if valid_webjs(filepath):
@@ -37,7 +47,7 @@ def get_file_list_from_cdnjs(libname):
         return file_list
     
     lib_info = json.loads(res.read())
-    logger.info(f"{len(lib_info['versions'])} versions of {libname} found.")
+    logger.info(f"{len(lib_info['versions'])} versions of {libname} found on Cdnjs.")
     for version in lib_info['versions']:
         if version[0] == '%':
             # %npm_package_version%
@@ -125,39 +135,13 @@ def valid_webjs(filepath):
             return False
     return True
 
-
-res = conn.fetchall(f"SELECT `libname`, `#versions`, `github` FROM `{LIBRARY_TABLE}` ORDER BY `star` DESC;")
-
-libcnt = 1
-# start = False
-
-github_url_set = set()
-
-for entry in res:
-    if libcnt > 1000 - 94 -79 -206:
-        break
-
-    libname = entry[0]
-    version_num = entry[1]
-    github = entry[2]
-
-    if version_num > 200:
-        continue
-    
-    # if libname == 'javascript-state-machine':
-    #     start = True
-    # if not start:
-    #     continue
-    
-
-    # Prevent counting repeated github repo 
-    if github and github in github_url_set:
-        libcnt -= 1
-    github_url_set.add(github)
-    
+def updateOne(libname):
     file_list = get_file_list_from_cdnjs(libname)
     pattern_dict = freq_filename_pattern(file_list, libname)
-    logger.info(pattern_dict)
+    # pattern_dict example: {'froala_editor': 132, 'video': 122, 'colors': 32, 'font_family': 10} 
+    # The number represents the frequency of this pattern among all versions
+
+    logger.custom(' == AUTO INDUCeD PATTERN LIST == ', pattern_dict)    
 
     file_dict = {}
     cnt = 1
@@ -186,12 +170,49 @@ for entry in res:
             logger.warning(f'No matched file found: {libname}: {version}')
         cnt += 1
     
-    with open(f'static/libs_data/{libname}.json', "w") as outfile:
+    save_file = f'static/libs_data/{libname}.json'
+    with open(save_file, "w") as outfile:
         outfile.write(json.dumps(file_dict))
+    logger.info(f'{libname} results saved to the location: {save_file}.')
 
-    logger.info(f'{libcnt} {libname} results saved.')
 
-    libcnt += 1
+    
+
+def updateAll():
+    res = conn.fetchall(f"SELECT `libname`, `#versions`, `github` FROM `{LIBRARY_TABLE}` ORDER BY `star` DESC;")
+
+    libcnt = 1
+
+    github_url_set = set()
+
+    for entry in res:
+
+        logger.custom(f'= LIB NO.{libcnt} =')
+
+        libname = entry[0]
+        version_num = entry[1]
+        github = entry[2]
+
+        # Skip the library with too many versions (normally some web frameworks like React)
+        if version_num > 200:
+            continue
+
+        # Prevent counting repeated github repo 
+        if github and github in github_url_set:
+            libcnt -= 1
+        github_url_set.add(github)
+
+        updateOne(libname)  
+        
+        libcnt += 1
+
+if __name__ == '__main__':
+    # Usage: > python3 2_get_version_files.py <lib name>
+
+    if len(sys.argv) > 1:
+        updateOne(sys.argv[1])
+    else:
+        updateAll()
 
 conn.close()
 logger.close()

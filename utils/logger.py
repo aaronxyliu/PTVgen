@@ -35,28 +35,35 @@ class getLogger:
     def close(self):
         self.outfile.close()
 
-    def info(self, content):
+    def info(self, content=''):
         time_str = datetime.datetime.now().strftime("%d.%b %Y %H:%M:%S")
         header = '[INFO]'
         print(colors.fg.green, time_str, colors.fg.green, header, colors.reset, content)
         self.outfile.write(f'{time_str} {header} {str(content)}\n')
     
-    def debug(self, content):
+    def debug(self, content=''):
         time_str = datetime.datetime.now().strftime("%d.%b %Y %H:%M:%S")
         header = '[DEBUG]'
         print(colors.fg.green, time_str, colors.fg.blue, header, colors.reset, content)
         self.outfile.write(f'{time_str} {header} {str(content)}\n')
     
-    def warning(self, content):
+    def warning(self, content=''):
         time_str = datetime.datetime.now().strftime("%d.%b %Y %H:%M:%S")
         header = '[WARNING]'
         print(colors.fg.green, time_str,  colors.fg.orange, header, colors.reset, content)
         self.outfile.write(f'{time_str} {header} {str(content)}\n')
     
-    def error(self, content):
+    def error(self, content=''):
         time_str = datetime.datetime.now().strftime("%d.%b %Y %H:%M:%S")
         header = '[ERROR]'
         print(colors.fg.green, time_str,  colors.fg.red, header, colors.reset, content)
+        self.outfile.write(f'{time_str} {header} {str(content)}\n')
+
+    def custom(self, title, content=''):
+        # The title text is defined by user
+        time_str = datetime.datetime.now().strftime("%d.%b %Y %H:%M:%S")
+        header = f'[{str(title).upper()}]'
+        print(colors.fg.green, time_str, colors.fg.green, header, colors.reset, content)
         self.outfile.write(f'{time_str} {header} {str(content)}\n')
 
 

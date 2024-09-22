@@ -26,7 +26,7 @@ def minify_pTs(libname):
 
     # Read pTrees from dataset
     for entry in res:
-        T = tree.LabeledTree(None, entry[1].decode('ascii'))        # The binary string from database needs to be decoded in to the normal string
+        T = tree.LabeledTree(None, entry[1])   
         T.fromjson(json.loads(entry[0]))
         G.addt(T)
     

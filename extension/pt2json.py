@@ -4,6 +4,8 @@ import argparse
 import MySQLdb
 import re
 import json
+import ultraimport
+logger = ultraimport('__dir__/../utils/logger.py').getLogger()
 
 def connect_to_localdb():
     connection = MySQLdb.connect(
@@ -40,8 +42,11 @@ def convert(libname, index_set):
             }        
 
     clean_libname = f'{libname}'.replace('.', '').replace('-', '')
-    with open(f'extension/output/{clean_libname}.json', 'w') as f:
+    save_file = f'extension/output/{clean_libname}.json'
+    with open(save_file, 'w') as f:
        json.dump(output_json, f)
+    
+    logger.info(f'Version file saved to the location: {save_file}.')
 
 
 if __name__ == '__main__':

@@ -240,7 +240,7 @@ def updateLibrary(libname, start_id = 0):
             pass
         except Exception as error:
             # handle the exception
-            logger.error("    An exception occurred:", error)
+            logger.error(error)
             log.append([version, 'N', 'Unknown fault.'])
         
     df = pd.DataFrame(log, columns =['Version', 'Success', 'Description']) 
