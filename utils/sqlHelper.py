@@ -32,6 +32,15 @@ class ConnDatabase:
 
         self.cursor.execute(f'''CREATE TABLE `{table_name}` ({statement});''')
         self.connection.commit()
+    
+    def drop(self, table_name: str):
+        self.cursor.execute(f'DROP TABLE IF EXISTS `{table_name}`;')
+        self.connection.commit()
+    
+    def entry_count(self, table_name: str) -> int:
+        self.cursor.execute(f'SELECT COUNT(*) FROM `{table_name}`;')
+        count = self.cursor.fetchone()[0]
+        return count
 
     def show_tables(self) -> list:
         # Return all the table names in the current database

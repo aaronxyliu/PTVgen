@@ -141,7 +141,7 @@ def updateOne(libname):
     # pattern_dict example: {'froala_editor': 132, 'video': 122, 'colors': 32, 'font_family': 10} 
     # The number represents the frequency of this pattern among all versions
 
-    logger.custom(' == AUTO INDUCeD PATTERN LIST == ', pattern_dict)    
+    logger.custom(' == AUTO INDUCED PATTERN LIST == ', pattern_dict)    
 
     file_dict = {}
     cnt = 1
