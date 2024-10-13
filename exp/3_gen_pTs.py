@@ -267,7 +267,7 @@ def updateAll():
         updateLibrary(libname)
 
 if __name__ == '__main__':
-    # Usage: > python3 gen_pTs.py <lib name>
+    # Usage: > python3 exp/gen_pTs.py <lib name>
 
     if len(sys.argv) > 1:
         updateLibrary(sys.argv[1])

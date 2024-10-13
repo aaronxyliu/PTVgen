@@ -35,10 +35,11 @@ def crawlByRelease(libname, github_direct=None):
     if not github_direct:
         res = conn.fetchone(f"SELECT `github` FROM `{LIB_TABLE}` WHERE libname='{libname}';")
         if not res:
+            logger.warning(f'{libname} is not found in the table {LIB_TABLE}. Skip.')
             return
         github_url = res[0]
         if not github_url:
-            logger.warning(f'{libname} is not found in dataset or its github url is emtpy.')
+            logger.warning(f'{libname} has an empty github url. Skip.')
             return
         github_direct = github_url[11:]
 
@@ -56,6 +57,7 @@ def crawlByRelease(libname, github_direct=None):
     while(True):
 
         release_url = f'https://api.github.com/repos/{github_direct}/releases?page={page_no}'
+        logger.info(f'Reading the data from {release_url} ...')
         release_info_list = readurl(release_url)
 
         if release_info_list and isinstance(release_info_list, list) and len(release_info_list) > 0:
@@ -77,10 +79,11 @@ def crawlByTag(libname, github_direct=None):
     if not github_direct:
         res = conn.fetchone(f"SELECT `github` FROM `{LIB_TABLE}` WHERE libname='{libname}';")
         if not res:
+            logger.warning(f'{libname} is not found in the table {LIB_TABLE}. Skip.')
             return
         github_url = res[0]
         if not github_url:
-            logger.warning(f'{libname} is not found in dataset or its github url is emtpy.')
+            logger.warning(f'{libname} has an empty github url. Skip.')
             return
         github_direct = github_url[11:]
 
@@ -97,9 +100,9 @@ def crawlByTag(libname, github_direct=None):
     tag_no = 0
     while(True):
 
-        release_url = f'https://api.github.com/repos/{github_direct}/tags?page={page_no}'
-        
-        tag_info_list = readurl(release_url)
+        tag_url = f'https://api.github.com/repos/{github_direct}/tags?page={page_no}'
+        logger.info(f'Reading the data from {tag_url} ...')
+        tag_info_list = readurl(tag_url)
 
         if tag_info_list and isinstance(tag_info_list, list) and len(tag_info_list) > 0:
             for tag_info in tag_info_list:
@@ -146,16 +149,20 @@ def crawlAll():
             release_no = crawlByRelease(libname)
             if release_no == 0:
                 # No release information
-                crawlByTag(libname)
+                tag_no = crawlByTag(libname)
+                if tag_no == 0:
+                    conn2.drop(libname)
 
 
 if __name__ == '__main__':
     # Usage: > python3 crawler/3_get_release_date.py <lib name> <github direct>
     # Example: > python3 crawler/3_get_release_date.py next vercel/next.js
+    #          > python3 crawler/3_get_release_date.py vue2 vuejs/vue
     #          > python3 crawler/3_get_release_date.py boomerangjs akamai/boomerang
+    #          > python3 crawler/3_get_release_date.py svelte simeydotme/svelte-range-slider-pips
     if len(sys.argv) == 1:
         crawlAll()
-    if len(sys.argv) == 2:
+    elif len(sys.argv) == 2:
         if BY_TAG_FLAG:
             crawlByTag(sys.argv[1])
         else:

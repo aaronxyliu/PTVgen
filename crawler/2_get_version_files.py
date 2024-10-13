@@ -16,6 +16,7 @@ EXTRA_BONUS = 200  # the credit bonus for the file name which is similar to the 
 # File name pattern list (priority from high to low).
 # If this is empty, then the suitable filename of each version will be induced automatically by their frequencies.
 PATTERN_LIST = ['froala_editor.pkgd.min.js', 'froala_editor.min.js']
+PRIORITY_PATTERN = ['.pkgd.js', '.pkgd.min.js']
 
 def select_file_for_each_version(files, patten_dict):
     # Return a single file path for each version
@@ -23,6 +24,11 @@ def select_file_for_each_version(files, patten_dict):
         for filepath in files:
             filename = filepath[filepath.rfind('/') + 1 :]
             if filename == pattern:
+                return filepath
+    
+    for pattern in PRIORITY_PATTERN:
+        for filepath in files:
+            if pattern in filepath:
                 return filepath
                 
     for pattern in patten_dict:
@@ -207,7 +213,7 @@ def updateAll():
         libcnt += 1
 
 if __name__ == '__main__':
-    # Usage: > python3 2_get_version_files.py <lib name>
+    # Usage: > python3 crawler/2_get_version_files.py <lib name>
 
     if len(sys.argv) > 1:
         updateOne(sys.argv[1])
