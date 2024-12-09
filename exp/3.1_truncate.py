@@ -2,10 +2,11 @@ import ultraimport
 import json
 logger = ultraimport('__dir__/../utils/logger.py').getLogger()
 conn = ultraimport('__dir__/../utils/sqlHelper.py').ConnDatabase('1000-pTs')
+# conn = ultraimport('__dir__/../utils/sqlHelper.py').ConnDatabase('library Version pTrees')
 
-LIB_NAME = 'aframe'
+LIB_NAME = 'jquery.isotope'
 TABLE_NAME = f'{LIB_NAME}_version'
-GLOABL_NAME_WHITELIST = ['AFRAME']
+GLOABL_NAME_WHITELIST = ['Isotope']
 
 def truncate_pTs():
 

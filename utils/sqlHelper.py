@@ -84,7 +84,8 @@ class ConnDatabase:
         sql = f"UPDATE `{table_name}` SET {fields_str} WHERE {condition};"
         self.cursor.execute(sql, values)
         self.connection.commit()
-    
+
+
     def update_otherwise_insert(self, table_name: str, fields: list, values: tuple, condition_field:str, condition_value:any):
         condition = f"`{condition_field}`='{condition_value}'"
         self.cursor.execute(f'''SELECT COUNT(*) FROM `{table_name}` WHERE {condition};''')
@@ -138,6 +139,9 @@ class ConnDatabase:
         self.cursor.execute(cmd)
         return self.connection.commit()
     
+    def deleteOne(self, table_name: str, condition: str) -> None:
+        self.execute(f"DELETE FROM `{table_name}` WHERE {condition} LIMIT 1;")
+    
 
     def combine_tables(self, new_table, old_tables: list) -> None:
         # Combine several tables with the same columns into a new table
@@ -156,4 +160,7 @@ class ConnDatabase:
             select_statements.append(f"SELECT `{fields_str}` FROM `{old_table}`")
         union_statement = ' UNION '.join(select_statements)
         self.execute(f'''INSERT INTO `{new_table}` SELECT * FROM ({union_statement}) a;''')
+    
+    def set_primary_key(self, table_name: str, primary_key: str) -> None:
+        self.execute(f"ALTER TABLE `{table_name}` ADD PRIMARY KEY (`{primary_key}`);")
         

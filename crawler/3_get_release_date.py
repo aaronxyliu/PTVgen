@@ -102,6 +102,7 @@ def crawlByTag(libname, github_direct=None):
 
         tag_url = f'https://api.github.com/repos/{github_direct}/tags?page={page_no}'
         logger.info(f'Reading the data from {tag_url} ...')
+
         tag_info_list = readurl(tag_url)
 
         if tag_info_list and isinstance(tag_info_list, list) and len(tag_info_list) > 0:
@@ -158,6 +159,7 @@ if __name__ == '__main__':
     # Usage: > python3 crawler/3_get_release_date.py <lib name> <github direct>
     # Example: > python3 crawler/3_get_release_date.py next vercel/next.js
     #          > python3 crawler/3_get_release_date.py vue2 vuejs/vue
+    #          > python3 crawler/3_get_release_date.py vue3 vuejs/core
     #          > python3 crawler/3_get_release_date.py boomerangjs akamai/boomerang
     #          > python3 crawler/3_get_release_date.py svelte simeydotme/svelte-range-slider-pips
     if len(sys.argv) == 1:

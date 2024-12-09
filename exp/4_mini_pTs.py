@@ -9,6 +9,7 @@ import ultraimport
 tree = ultraimport('__dir__/../utils/tree.py')
 logger = ultraimport('__dir__/../utils/logger.py').getLogger()
 conn = ultraimport('__dir__/../utils/sqlHelper.py').ConnDatabase('1000-pTs')
+# conn = ultraimport('__dir__/../utils/sqlHelper.py').ConnDatabase('library Version pTrees')
 
 
 def minify_pTs(libname):
@@ -105,7 +106,7 @@ def minifyAll():
     df.to_csv(f'log/mini_pTs.csv', index=True)
 
 if __name__ == '__main__':
-    # Usage: > python3 mini_pTs.py <lib name>
+    # Usage: > python3 exp/4.mini_pTs.py <lib name>
 
     if len(sys.argv) > 1:
         minify_pTs(sys.argv[1])
